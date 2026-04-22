@@ -1,0 +1,14 @@
+package J01_basic;
+
+public class J21For {
+
+	public static void main(String[] args) {
+		// 
+		//for (int = i; i<=1000; i++) {
+		for (int = i; ; i++) {
+			System.out.println(i);
+		}
+
+	}
+
+}

@@ -1,0 +1,34 @@
+package j10io;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
+
+public class FileWriterTest {
+	Scanner scan = new Scanner(System.in);
+
+	public FileWriterTest() {
+
+		try {
+			File f = new File("c:/study/javaTest", "memo.txt");
+
+			System.out.print("문자열입력 =");
+			String inData = scan.nextLine();
+
+			// 문자열을 쓰기
+			FileWriter fw = new FileWriter(f, true); // 예외처리 해야함
+			fw.write(inData); //파일로 쓰기되는 시점
+			fw.close(); // FileWriter닫기
+			
+		} catch (IOException ie) {
+			System.out.println("파일쓰기 예외 발생함....." + ie.getMessage());
+		}
+	}
+
+	public static void main(String[] args) {
+		new FileWriterTest();
+
+	}
+
+}

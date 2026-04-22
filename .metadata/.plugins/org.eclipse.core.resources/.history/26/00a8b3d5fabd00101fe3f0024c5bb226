@@ -1,0 +1,51 @@
+package J01_basic;
+
+import java.util.Scanner;
+
+public class J22ForEx {
+
+	public static void main(String[] args) {
+		/*
+		 * 실행
+		 * 메뉴(1. 사각형의 넓이, 2. 원의 넓이, 3. 종료)?1
+		 * 가로= ----
+		 * 새로= ----
+		 * 사각형의 넓이 = ----
+		 * 메뉴(1. 사각형의 넓이, 2. 원의 넓이, 3. 종료)?2
+		 * 반지름 = ---
+		 * 원의 넓이 = ----
+		 * 메뉴(1. 사각형의 넓이, 2. 원의 넓이, 3. 종료)?3
+		 * 
+		 */
+		Scanner s = new Scanner(System.in);
+		
+		
+		for(int i = 1; i<=3; ) {
+			System.out.print("(1. 사각형의 넓이, 2. 원의 넓이, 3. 종료)?");
+			int num = s.nextInt();
+		
+			if(num == 1) {
+				System.out.print("가로 =");
+				int length = s.nextInt();
+				System.out.print("세로 =");
+				int height = s.nextInt();
+				
+				int area = length * height;
+				System.out.printf("사각형의 넓이=%d\n", area);
+				
+			} else if(num == 2) {
+				System.out.print("반지름 =");
+				int radius = s.nextInt();
+				
+				double carea = radius * radius * Math.PI; // Math.pi=3.14 더 정확한 값
+				System.out.printf("원의 넓이=%.2f\n", carea);
+				
+			} else
+				System.out.print("프로그램이 종료되었습니다.");
+				System.exit(0);
+			
+		}	
+
+	}
+
+}

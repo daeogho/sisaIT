@@ -1,0 +1,41 @@
+package J01_basic;
+
+import java.util.Scanner;
+
+public class J23ForEx {
+
+	public static void main(String[] args) {
+		// 
+		/* 
+		 * 실행
+		 * 첫번째수 = ---
+		 * 두번째수 = ---
+		 * 큰수는 ---이다. (반복)
+		 * 
+		 * --5번 반복
+		 */
+
+		Scanner s = new Scanner(System.in);
+				
+		for(int i = 1; i < 6 ; i++) {
+			
+			System.out.print("첫번째수 =");
+			int fnum = s.nextInt();
+			System.out.print("두번째수 =");
+			int snum = s.nextInt();
+			
+			int result;
+			if(fnum>=snum) {
+				result = fnum;
+				//System.out.printf("더큰 값은 %d 입니다.\n", fnum);
+				
+			}else 
+				result = snum;
+				//System.out.printf("더큰 값은 %d 입니다.\n", snum);
+				
+			
+			System.out.println("더 큰 값은" + result + "입니다.");
+		}
+	}
+
+}

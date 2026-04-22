@@ -1,0 +1,68 @@
+package j10io;
+
+import java.io.File;
+import java.util.Calendar;
+
+public class FileTest {
+
+	public FileTest() {
+		// File : 파일관련된 드라이브, 경로, 파일명에 관한 정보를 처리할 수 있다.
+		// 드라이브명
+		File f1 = new File("c:/");
+		File f2 = new File("c:/study/javaTest");
+		File f3 = new File("c:/study/javaTest", "Test.java");
+		File f4 = new File("c:/study/javaTest/Test.java");
+		File f5 = new File(f2, "Test.java");
+
+		// file의 크기
+		long length = f3.length();
+		System.out.println("length=>" + length + "byte");
+
+		// 만들 폴더를 File객체로 생성
+		File f6 = new File("c:/study/javaTest/a1/b1");
+		if (f6.mkdirs()) { // mkdirs : 폴더 만드는
+			System.out.println("폴더가 생성되었습니다.");
+		} else {
+			System.out.println("폴더 생성 실패하였습니다.");
+		}
+
+		// 파일 존재유무 확인
+		if (f4.exists()) { // 있으면 true, 없으면 false ( exists : 파일이 있는지 확인하는 수식)
+			System.out.println("파일이 존재 합니다.");
+		} else {
+			System.out.println("파일이 존재하지 않습니다.");
+		}
+		// 마지막 수정일
+		long lastDate = f5.lastModified();
+		System.out.println(lastDate);
+
+		Calendar date = Calendar.getInstance(); // 오늘날짜
+		date.setTimeInMillis(lastDate); // TimeInMillis날짜 변경하기
+
+		int month = date.get(Calendar.MONTH)+1;// 월
+		int day = date.get(Calendar.DAY_OF_MONTH); // 일
+		int hour = date.get(Calendar.HOUR); // 시
+		int minute = date.get(Calendar.MINUTE); // 분
+		System.out.printf("%d월 %d일 %d시 %d분\n",  month, day, hour, minute);
+// --------------------------------------------------------------------------------------
+		
+		// c: 드라이브의 폴더들과 파일들을 구하기
+		File list[] = f1.listFiles();
+		System.out.println("length=>" + list.length);
+		for(File f : list) {
+			String name = f.getName(); // 경로, 파일명
+			String pathName = f.getPath(); //드라이브, 경로, 파일명
+			//System.out.println("name=>" + name);
+			//               파일이면 true, 폴더면 false
+			String result = (f.isFile())? "파일" : "폴더";
+			
+			System.out.println("pathname=>" + pathName + "["+result+"]");
+		}
+	}
+
+	public static void main(String[] args) {
+		new FileTest();
+
+	}
+
+}
