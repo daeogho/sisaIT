@@ -1,0 +1,23 @@
+body{
+        margin:0
+}
+.menu{
+        height:50px;
+        line-height:60px;
+        background-color: navy;
+        color:white;
+        text-align: center;
+        font-size:2em
+}
+.menu a{
+        text-decoration: none;
+        color:white;
+        margin:0 30px;
+}
+footer{
+        height:100px;
+        line-height:100px;
+        background-color: black;
+        color:white;
+        text-align: center;
+}

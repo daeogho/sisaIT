@@ -1,0 +1,125 @@
+body {
+        margin: 0;
+}
+
+a:link {
+        text-decoration: none;
+}
+
+/* 할인 메뉴 */
+.top-menu {
+        height: 55px;
+        text-align: center;
+        background-color: #754A44;
+        line-height: 55px;
+        font-size: 1.2em;
+}
+
+.top-menu>a {
+        padding: 0 20px;
+}
+
+.top-menu>a:link,
+.top-menu>a:visited {
+        color: white;
+}
+
+.top-menu>a:hover {
+        color: yellow;
+}
+
+/* 메인메뉴 */
+.main-menu {
+        background-color: white;
+        color: #111;
+        height: 55px;
+        line-height: 55px;
+        text-align: center;
+        font-size: 1.2em;
+        vertical-align: center;
+}
+.main-menu img{
+        vertical-align:middle; /* vertical-align : 위아래 정렬 */
+        height:25px;
+}
+
+.main-menu>a {
+        margin: 0 10px;
+}
+
+.main-menu>a:link,
+.main-menu>a:visited,
+.banner-menu a:link,
+.banner-menu a:visited {
+        color: #111;
+}
+
+.main-menu>a:hover, .banner-menu a:hover {
+        font-weight: bold;
+}
+
+/* 베너메뉴 */
+.banner-menu {
+        background-color: #F5EDEB;
+        display: flex;
+        justify-content: center;
+}
+
+.banner-menu img {
+        width: 120px;
+}
+
+.banner-menu>div {
+        padding: 10px;
+        text-align:center;
+}
+
+/* 인기상품 */
+.hot{
+        font-size: 2.5em;
+        font-weight: bold;
+        text-align: center;
+        padding:60px 0;
+}
+.hot>a:link, .hot>a:visited, .hot>a:hover{
+        text-decoration: none;
+        color:#111;
+}
+/*상품목록*/
+.hot-list>div{
+        width:350px;
+        border: 1px solid #aaa;
+        margin:10px;
+        background-color: aqua;
+}
+.hot-list{
+        display:flex;
+        justify-content: center;
+}
+.hot-list img{
+        width:100%;
+}
+.hot-list>div>div{
+
+}
+/* 상품명 */
+.proc-title{
+        display:flex;
+}
+.proc-title>div:last-of-type{
+        width:50px;
+        background-color: #111;
+        color:#fff;
+        text-align: center;;
+}
+.proc-title>div:first-of-type{
+        color:#111;
+
+        /*말줄임*/
+        white-space: nowrap; /*줄바꿈안함*/
+        overflow:hidden; /*넘친데이터 숨김*/
+        text-overflow: ellipsis; /*데이터 넘치면 ...을 표시해라 */
+        height:50px;
+        line-height: 50px;
+        font-weight: bold;
+}
