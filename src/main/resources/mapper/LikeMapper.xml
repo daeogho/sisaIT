@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.doldam.mini.dao.LikeDAO">
+	<select id="likeCheck" resultType="int">
+		SELECT COUNT(*) 
+	    FROM `like` 
+	    WHERE no = #{no} AND userID = #{logId}
+	</select>
+	<insert id="likeInsert">
+		insert into `like`(no, userID, writedate)
+		values(#{param1}, #{param2}, now())
+	</insert>
+	<delete id="likeDelete">
+		delete from `like` where no = #{param1} and userID = #{param2}
+	</delete>
+	<delete id="likeDeleteAllByBoardNo">
+	    DELETE FROM `like` WHERE no = #{no}
+	</delete>
+</mapper>

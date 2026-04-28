@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+body{
+	margin:0;
+	min-height:100vh;
+	/* background:url(/mini/resources/image/background.jpg); */
+	background-size:100%;
+	/* background-repeat: no-repeat; */
+
+}
+.mypage-wrapper{
+	min-height:85vh;
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+/* -------------------- 배경영역-----------------*/
+.my_back {
+	width: 100%;
+	display:flex;
+	justify-content: center;
+	align-items: stretch;
+	gap:20px;
+	padding:150px 0;
+	margin:0;
+	max-height: 40%; 
+}
+/* 프로필 박스 */
+.my_profile{
+	position:relative;
+	width : 300px;
+	background-color:#afd485;
+	border-radius : 40px;
+
+	display: flex;
+	flex-direction:column;
+	align-items:center;
+	padding-top : 60px;
+}
+
+.profile_info{
+	width: 80%;
+	/*  border-bottom:2px solid #1E4B6C;*/
+	margin-top:20px;
+	padding-bottom:30px;
+	text-align:center;
+	font-weight:bold;
+}
+.profile_info p{
+	margin: 4px 0;
+	font-size: 16px;
+}
+
+/*---------------------프로필 메뉴---------------- */
+.my_profile .profile_menu {
+	margin-top:50px;
+	flex-direction:column;
+	width:80%;
+	margin:5px auto;
+	padding:10px 0;
+	background-color:#afd485;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+
+	border:none;
+	border-radius:14px;
+	
+	text-decoration:none;
+	font-size:15px;
+	color:#EDECE8;
+	transition: background-color .2s ease,
+	            color .2s ease,
+	            font-weight .2s ease;
+}
+.mypage_title{
+	position:absolute;
+	top:-30px;
+	left:50%;
+	transform:translateX(-50%);
+	z-index:10;
+}
+.mypage_title>img{
+   width:230px;
+   position: relative;
+   
+
+}
+.menu_item{
+	width:80%;
+	margin:5px auto;
+	padding:10px 0;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+
+	border:none;
+	border-radius:20px;
+	text-decoration:none;
+	font-size:15px;
+	color:#fff;
+	transition: background-color .2s ease,
+	            color .2s ease,
+	            font-weight .2s ease,
+	            all .2s ease;
+}
+.my_profile .profile_menu .menu_item:hover,
+.my_profile .profile_menu .menu_item.active
+{
+	background-color: #6e8357;
+	color: #fff;
+	font-weight: 600;
+}
+
+/*----------------- 게시글 박스---------------------- */
+.my_box{
+	width : 800px;
+	padding: 25px;
+	margin-top: 5px;
+	display:flex;
+	flex-direction: column;
+	justify-content:flex-start;
+}
+.mypage_welcome{
+	background:#e4f0d5;
+	border-radius:20px;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    position:relative;
+}
+.board_area{
+	display:flex;
+	flex-direction:column;
+}
+.board_title{
+	display:flex;
+	flex-direction: row;
+	align-items:center;
+	justify-content: center;
+	gap:20px;
+	padding: 10px 0px;
+	border-bottom: 2px solid black;
+	border-top: 2px solid black;
+	text-align:center;
+	
+}
+
+.board_title img{
+	width : 30px;
+	object-fit : cover;
+}
+.board_title p{
+	margin:0px;
+	font-size: 20px;
+	font-weight:700;
+}
+.board_item:hover{
+	transform:translateY(-3px);
+	box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* -------------------- 보드 안 게시글 내용---------------- */
+.box_board{
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap : 20px;
+	padding: 30px;
+	background-color:#ffffff;
+	height:520px;
+	overflow-y:auto;
+	align-content:start;
+	
+	/* 텍스트가 칸을 밀어내지 못하게 만듦 */
+    min-width: 0;
+}
+
+.board_item{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	padding : 10px;
+	border-radius:10px;
+	background-color: #fff;
+	padding:10px;
+	
+	/* 텍스트가 칸을 밀어내지 못하게 만듦 */
+    min-width: 0;
+	
+}
+.board_item img{
+	width: 100%;
+	height: 150px;
+	object-fit:cover;
+	border-radius : 5px;
+}
+.board_info{
+	width:100%;
+	
+	 /* 텍스트가 칸을 밀어내지 못하게 만듦 */
+    min-width: 0;
+	
+}
+.board_item .board_info a {
+	font-size:15px;
+	font-weight: 600;
+	text-decoration:none;
+	color: #333;
+	display: block;
+	margin-bottom:5px;
+	text-align:left;
+	
+}
+.board_info a {
+	
+	 display: block;
+	width:100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+	
+}
+.board_item .board_info p {
+	font-size: 12px;
+	color: #666;
+	margin: 0;
+	line-height: 1.4;
+	word-break:break-word;
+	text-align:left;
+}
+
+/* 게시글 중첩 */
+
+.content_section{
+	display:none;
+}
+
+.content_section.active{
+	display:block;
+}
+/* --------------------- 좋아요 ---------------- */
+.like_board{
+	padding:0;
+	background:#ffffff;
+	border-radius:30px;
+	height:520px;
+	overflow:hidden;
+	display:flex;
+	border: 1px solid #b8bbbf;
+}
+
+/* ------------------------댓글----------------------- */
+.content_section{
+	display:none;
+}
+
+.content_section.active{
+	display:block;
+	height:100%;
+}
+.comment_board{
+	display:grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap:20px;
+	padding:30px;
+	height:520px;
+	overflow-y:auto;
+	align-content:start;
+}
+.comment_item{
+	height:110px;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	
+	padding:15px;
+	border:0.5px solid #ddd;
+	border-radius:20px;
+	background:#fff;
+	
+	cursor:pointer;
+	transition:0.2s;
+}
+.comment_item:hover{
+	transform:translateY(-3px);
+	box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+.comment_content{
+	font-size:14px;
+	font-weight:700;
+	color:#555;
+	margin-bottom:8px;
+	display:-webkit-box;
+	-webkit-line-clamp:1;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+}
+.comment_title{
+	font-weight:500;
+	font-size:12px;
+	margin-bottom:6px;
+	color:#333;
+	display:-webkit-box;
+	-webkit-line-clamp:1;
+	-webkit-box-orient:vertical;
+	overflow:hidden;
+}
+
+.comment_date{
+	font-size:10px;
+	color:#999;
+}
+/* ---------------------버튼 -------------------*/
+.season-pagination, .comment-pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 5px;             
+}
+
+.season-pagination a, .comment-pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: all 0.2s;
+    text-align:center;
+}
+
+.season-pagination a.active,
+.comment-pagination a.active,
+.season-pagination a:hover,
+.comment-pagination a:hover {
+    background-color: #1b3c53;
+    color: #fff;
+}

@@ -1,0 +1,104 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<style>
+.site-footer{
+    background-color:#3f3d38;
+    padding:28px 0;
+    color:#f4f1ec;
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.05),
+        inset 0 -1px 0 rgba(0,0,0,0.25);
+        width:100%;
+        flex:0 0 100%;
+}
+.footer-rich{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:40px;
+}
+
+.footer-brand{
+    flex:2;
+}
+
+.footer-logo{
+    font-size:18px;
+    font-weight:700;
+    letter-spacing:0.5px;
+}
+
+.footer-desc{
+    margin:8px 0 10px;
+    font-size:13px;
+    line-height:1.5;
+    color:#d6d6d6;
+}
+
+.footer-copy{
+    font-size:11px;
+    color:#a8a8a8;
+    margin:0;
+}
+
+.footer-links{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.footer-links a{
+    font-size:13px;
+    color:#d6d6d6;
+    text-decoration:none;
+}
+
+.footer-links a:hover{
+    color:#ffffff;
+    text-decoration:underline;
+}
+
+.footer-contact{
+    flex:1;
+    font-size:13px;
+    color:#d6d6d6;
+}
+
+.footer-contact .label{
+    font-weight:600;
+    margin-bottom:6px;
+}
+</style>
+
+<footer class="site-footer">
+    <div class="footer-inner footer-rich">
+
+        <div class="footer-brand">
+            <strong class="footer-logo">돌담</strong>
+            <p class="footer-desc">
+                계절이 머무는 길을 따라,<br>
+                지금의 계절이 만든 제주를 돌다
+            </p>
+            <p class="footer-copy">© 2026 DOLDAM</p>
+        </div>
+
+        <div class="footer-links">
+            <a href="#">이용약관</a>
+            <a href="#">개인정보처리방침</a>
+            <a href="#">공지사항</a>
+            <a href="#">문의하기</a>
+        </div>
+
+        <div class="footer-contact">
+            <p class="label">Contact</p>
+            <p>doldam@doldam.com</p>
+        </div>
+
+    </div>
+</footer>

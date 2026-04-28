@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.doldam.mini.dao.MyPageDAO">
+	<!-- 회원정보 선택 -->
+	<select id="userSelect" parameterType="string"
+		resultType="com.doldam.mini.dto.UserDTO">
+		select userID, userpwd, username, tel, email
+		from user where
+		userID = #{userID}
+	</select>
+
+	<!-- 회원정보 수정 -->
+	<update id="userUpdate"> update user set username=#{username},
+		tel=#{tel},
+		email=#{email} where userID=#{userID} and userpwd=#{userpwd}
+	</update>
+	<!-- 마이페이지 게시글 보기 -->
+	<select id="selectMySeason"
+		resultType="com.doldam.mini.dto.MyPageDTO">
+		select no, userID, subject, context, hit, writedate,
+		thumbnail, season,
+		lat, lng, addrtitle from board where
+		userID=#{userID} order by no desc
+	</select>
+
+	<!-- 좋아요 게시글 지도표시 -->
+	<select id="selectLikeMap" parameterType="string"
+		resultType="com.doldam.mini.dto.MyPageDTO">
+		select b.no, b.subject, b.lat, b.lng, b.addrtitle, b.season
+		from `like` l join board b ON l.no = b.no
+		where l.userID = #{userID}
+	</select>
+
+	<!-- 마이페이지 댓글조회 -->
+	<select id="selectMyCommentList" parameterType="String"
+		resultType="com.doldam.mini.dto.MyPageDTO"> select s.no, s.subject, s.season,
+		c.context,
+		DATE_FORMAT(c.writedate, '%y-%m-%d %H:%i') as commentDate from comment
+		c join board s on c.no=s.no where
+		c.userID=#{userID} order by c.no desc
+	</select>
+
+	<!-- 작성글 총 개수 -->
+	<select id="selectMySeasonCount" parameterType="string"
+		resultType="int">
+		SELECT COUNT(*) FROM board WHERE userID = #{userID}
+	</select>
+
+	<!-- 작성글 페이지별 조회 -->
+	<select id="selectMySeasonPaging" parameterType="map"
+		resultType="com.doldam.mini.dto.MyPageDTO">
+		select no, userID, subject, context, hit, writedate,
+		thumbnail, season, lat, lng, addrtitle
+		from board
+		where userID=#{userID}
+		order by no desc
+		LIMIT #{limit} OFFSET #{offset}
+	</select>
+
+	<!-- 댓글 총 갯수 -->
+	<select id="selectMyCommentCount" parameterType="string"
+		resultType="int">
+		SELECT COUNT(*)
+		FROM comment
+		WHERE userID = #{userID}
+	</select>
+
+	<!-- 페이지별 댓글 조회 -->
+	<select id="selectMyCommentPaging" parameterType="map"
+		resultType="com.doldam.mini.dto.MyPageDTO">
+		SELECT s.no,
+		s.subject,
+		s.season,
+		c.context AS comment,
+		DATE_FORMAT(c.writedate, '%y-%m-%d %H:%i') AS commentDate
+		FROM comment c
+		JOIN board s ON c.no = s.no
+		WHERE c.userID = #{userID}
+		ORDER BY c.no DESC
+		LIMIT #{limit} OFFSET #{offset}
+	</select>
+
+
+</mapper>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  	"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.doldam.mini.dao.UserDAO">
+	<insert id="userInsert">
+		insert into user(userID, userpwd, username, tel, email)
+		values(#{userID},#{userpwd},#{username},#{tel},#{email})
+	</insert>
+	<select id="login" resultType="com.doldam.mini.dto.UserDTO">
+		select userID, username from user where userID=#{param1} and userpwd=#{param2}
+	</select>
+</mapper>  	
+  	

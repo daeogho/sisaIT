@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.doldam.mini.dao.SeasonDAO">
+	<insert id="seasonInsert">
+		insert into board(subject, context, userID, writedate, season, thumbnail, addrtitle, lat, lng)
+		values(#{subject}, #{context}, #{userID}, now(), #{season}, #{thumbnail}, #{addrtitle}, #{lat}, #{lng});
+	</insert>
+	<select id = "totalRecord" resultType="int">
+		select count(no) cnt from board
+		where season = #{season}
+		<if test="searchWord!=null and searchWord!=''">
+			and subject like '%${searchWord }%'
+		</if>
+	</select>
+	<select id ="seasonPageSelect" resultType="com.doldam.mini.dto.SeasonDTO">
+		select no, subject, userID, hit, thumbnail, season, addrtitle, lat, lng, 
+		date_format(writedate, '%m-%d %h:%i') as writedate,
+		(select count(no) from `like` where no = no and userID = #{logId}) as isLike
+		from board where season =#{season}
+		<!-- 검색어가 있을 때 -->
+		<if test="searchWord!=null and searchWord!=''">
+			and subject like '%${searchWord }%'
+		</if>
+		order by no desc
+		limit ${onePageRecord} offset ${offsetPoint}
+	</select>
+	<select id="seasonSelect" resultType="com.doldam.mini.dto.SeasonDTO">
+		select a.no, a.subject, a.context, a.hit, a.userID, a.thumbnail, a.writedate, a.season,
+		a.addrtitle, a.lat, a.lng, b.username from board AS a
+		inner join user as b on a.userID = b.userID
+		where a.no=#{param1};
+	</select>
+	<update id="hitCount">
+		update board set hit= hit+1 where no=${param1}
+	</update>
+	<update id="seasonUpdate">
+		update board set subject=#{subject}, thumbnail=#{thumbnail},season=#{season},
+		addrtitle=#{addrtitle}, context=#{context}
+		where no=#{no}
+	</update>
+	<delete id="seasonDelete">
+		delete from board where no=#{param1}
+	</delete>
+</mapper>

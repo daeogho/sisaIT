@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.doldam.mini.dao.SeasonReplyDAO">
+	<insert id="replyWrite">
+		insert into comment(no, userID, context, season)
+		values(#{no}, #{userID}, #{context}, #{season})
+	</insert>
+	<select id="replySelect">
+		select r.comment_no, r.userID, r.context, r.writedate, r.season, r.no, u.username
+		from comment AS r
+		INNER JOIN user AS u on r.userID=u.userID
+		where r.no=#{no} order by comment_no desc;
+	</select>
+	<update id="replyUpdate">
+	    UPDATE comment SET context=#{context} WHERE comment_no=#{comment_no}
+	</update>
+ 	<delete id="replyDelete">
+ 		DELETE r FROM comment AS r
+		INNER JOIN user AS u ON r.userID = u.userID
+ 		where r.comment_no = #{param1} and u.userID = #{param2}
+ 	</delete>
+ 	<delete id="replyDeleteAllByBoardNo">
+	    DELETE FROM comment WHERE no = #{no}
+	</delete>
+</mapper>

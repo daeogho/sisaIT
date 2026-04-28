@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+	
+	<!--  dataSource 객체 생성하기  
+		  DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		  
+		  DataSource객체를 생성하기 위해서는 beans태그에 기능을 추가한다.
+		  => 하단에 namespaces탭을 선택하여
+	-->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://192.168.4.60:3306/doldam"></property>
+		<property name="username" value="mini2"></property>
+		<property name="password" value="2222"></property>
+	</bean>
+	<!--  mybatis에서 사용할 xml환경설정파일을 SqlSessionFactory객체로 생성한다. 이때 dataSource객체가 존재해야한다.  -->
+	<bean id="SqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="classpath:mybatis-config.xml"></property>
+		<property name="mapperLocations" value="classpath:/mapper/*Mapper.xml"></property>
+	</bean>
+	<mybatis-spring:scan base-package="com.doldam.mini.dao"></mybatis-spring:scan>	
+</beans>
