@@ -1,0 +1,27 @@
+body{
+        margin:0;
+}
+a{
+        text-decoration: none;;
+        color:black;
+}
+.top-logo{
+        height: 100px;
+        font-size: 4em;
+        text-align: center;
+        line-height: 100px;
+}
+.main-menu{
+        display: flex;
+        justify-content: center;
+        background-color: orange;
+}
+.main-menu>div{
+        height: 60px;
+        line-height: 60px;
+        padding:0 10px;
+        font-size: 1.3em;
+}
+.main-menu a{
+        color:white;
+}
