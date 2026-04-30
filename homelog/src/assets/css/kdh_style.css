@@ -1,0 +1,233 @@
+/* ------------------김대호------------------------*/
+
+a {
+        color: black;
+        text-decoration: none;
+}
+
+/* 본문 */
+.post {
+        width: 70%;
+        margin: 20px auto;
+        justify-content: space-between;
+        align-items: flex-start;
+        font-size: 16px;
+        font-weight: normal;
+        color: #555;
+        border: solid 1px #d3d3d3;
+}
+
+
+.meta_left {
+        font-weight: bold;
+}
+
+.meta_date {
+        margin-bottom: 5px;
+}
+
+.meta_hit {
+        color: #888;
+}
+
+.post_main {
+        width: 80%;
+        margin: 40px auto;
+        text-align: center;
+        font-size: 20px;
+        line-height: 1.8;
+}
+.container>button {
+        margin: 20px 10px;
+}
+
+/* 작성자 프로필 */
+.post_profile {
+        width: 800px;
+        height: 150px;
+        margin: 50px auto;
+        border-top: 1px solid #e7e7e7;
+        border-bottom: 1px solid #e7e7e7;
+}
+
+.post_profile img {
+        width: 100px;
+        margin: 25px 20px;
+        border-radius: 100px;
+        float: left;
+}
+
+.post_profile a {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 40px 10px;
+        color: black;
+        text-decoration: none;
+        float: left;
+}
+
+.post_profile>div a:nth-child(2) {
+        font-size: 25px;
+        ;
+}
+
+/* 댓글 */
+.post_comment img {
+        width: 60px;
+        margin-right: 10px;
+        float: left;
+
+}
+
+.post_comment {
+        height: 60px;
+        line-height: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+}
+
+.content a {
+        color: black;
+        text-decoration: none;
+}
+
+/* 게시글 소개 */
+.content {
+        max-width: 1600px;
+        width: 100%;
+        border: solid 1px #9b9b9b;
+        padding: 50px 0;
+        margin: 60px auto;
+}
+
+.content_text {
+        width: 70%;
+        margin: 0 auto;
+        font-family: 'Chiron GoRound TC', sans-serif;
+        text-align: center;
+}
+
+.content_text .title {
+        font-size: 6em;
+        margin: 0 0 20px 0;
+        font-weight: normal;
+        line-height: 1.2;
+}
+
+.content_text .description {
+        font-size: 20px;
+        line-height: 1.8;
+        margin: 0 auto;
+        max-width: 700px;
+        /* 문장 폭 제한 */
+        color: #555;
+}
+
+/* 등록하기 버튼 */
+.content_action {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 40px;
+}
+
+.write_btn {
+        white-space: nowrap;
+}
+
+.search_box {
+        display: flex;
+        gap: 10px;
+}
+
+.search_box input {
+        width: 300px;
+}
+
+/* 게시글 목록 */
+.content_banner {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+}
+
+/* 게시글 이미지*/
+.content_board {
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+}
+
+.content_board>a {
+        display: block;
+        overflow: hidden;
+}
+
+.content_board img {
+        width: 100%;
+        height: 350px;
+        border: 1px solid #9b9b9b;
+        transition: transform 0.3s ease;
+}
+
+.content_board a:hover img {
+        transform: scale(1.2);
+        overflow:hidden;
+}
+
+.board_title {
+        padding: 5px;
+        margin: 0;
+
+}
+
+.board_title a {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 6px;
+        overflow: hidden;
+        /* 넘치는 부분 숨김 */
+        text-overflow: ellipsis;
+        /* ... 표시 */
+        white-space: nowrap;
+        /* 줄바꿈 금지 */
+
+}
+
+/* 조회수 */
+.board_hit {
+        display: flex;      
+        align-items: center;
+        font-size: 14px;
+        color: #555;
+        margin-left: 30px;
+        margin-bottom:10px;
+}
+
+/* 좋아요 */
+.board_like {
+        display: flex;
+        font-weight: 700;
+        align-items: center;
+        font-size: 1.1em;
+        padding: 0 10px;
+        margin-bottom:10px;
+        justify-content: space-between;
+
+}
+
+.board_like img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        border: none;
+}
+
+/* 페이지 숫자 버튼 */
+.container {
+        display: flex;
+        justify-content: center;
+}

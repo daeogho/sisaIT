@@ -1,0 +1,106 @@
+footer{
+        height:160px;
+        background-color: #003631;
+        color: #ffffff;
+        text-align: center;
+        font-size:0.9em;
+        margin: 0;
+        padding: 0;
+}
+/* 카테고리 */
+.category {
+        position:relative;
+        display: flex;
+        align-items: center;
+        height:160px;
+        padding:0 32px;     
+        background-color:  #003631;
+}
+/* 로고, 카테고리 이미지 */
+.logo img{
+        height: 100px;
+        filter: invert(1);
+        transition:filter 0.2s ease;
+}
+.category_icon img{
+        height:50px;
+        filter: invert(1);
+        transition:filter 0.2s ease;
+}
+
+.category_icon{
+        margin-left :24px;
+        cursor:pointer;
+}
+
+/* 카테고리 메뉴 */
+.menu{
+        position: absolute;
+        left: 400px;
+        top: 50%;
+        transform: translateY(-50%);
+
+        display: flex;
+        gap:20px;
+
+        width: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: width 0.3s ease, opacity 0.2s ease;
+}
+.menu.open{
+        width:800px;
+        opacity : 1;
+}
+
+.menu a{
+        white-space: nowrap;
+        word-break: keep-all;
+}
+
+.user_menu{
+        position: absolute;
+        right: 32px;
+        top:50%;
+        transform: translateY(-50%);
+        display:flex;
+        gap:20px;
+        
+}
+
+.category a {
+        text-decoration: none;
+        font-size: 30px;
+        margin: 0px;
+        padding:0 20px;
+        font-weight: bold;
+        color: #ffffff;
+}
+/* 로그인, 아웃 메뉴 */
+.user_menu a{
+        text-decoration: none;
+        font-size: 20px;
+        color: #ffffff;
+        transition:filter 0.2s ease;
+        
+}
+
+/* 마우스 올림 */
+.category a:hover,
+.user_menu a:hover{
+        text-decoration: none;
+        cursor: pointer;
+        color : #ffeda8;
+}
+
+.category_icon:hover + .menu,
+.menu:hover{
+        width:800px;
+        opacity : 1;
+        transform: translateY(-50%) translateX(0);
+}
+
+.logo img:hover,
+.category_icon img:hover{
+       filter: invert(70%);
+}
