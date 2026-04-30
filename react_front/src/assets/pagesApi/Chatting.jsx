@@ -49,7 +49,7 @@ function Chatting(){
                 }
                 // 채팅 서버에 접속
                 // 채팅 서버 객체를 sockJS 객체로 생성하여 ref변수에 담아놓는다. 스프링에 접속 : /ws
-                stompClient.current = Stomp.over(()=> new SockJS('http://192.168.4.50:9988/ws'))
+                stompClient.current = Stomp.over(()=> new SockJS('http://43.202.150.110:9988/ws'))
 
                 // 서버에 접속하기
                 stompClient.current.connect({}, onConnected, onError)

@@ -15,7 +15,7 @@ function DataDetail(){
                 
         },[])
         function getDataDetail(){
-                axios.get(`http://192.168.4.50:9988/data/dataDetail/${id}`)
+                axios.get(`http://43.202.150.110:9988/data/dataDetail/${id}`)
                 .then((response)=>{
                         let d = response.data.data;
                         console.log("d",d);
@@ -45,7 +45,7 @@ function DataDetail(){
         // 첨부파일 다운로드
         const downloadFile = async (dFilename) =>{
              // 다운로드 받을 파일을 boot에 요청   
-             const response =  await axios.get(`http://192.168.4.50:9988/data/file/download/${dFilename}`,
+             const response =  await axios.get(`http://43.202.150.110:9988/data/file/download/${dFilename}`,
                                         {responseType:'blob'}
              )
              // href에 대입할 주소 만들기  href="파일명", href="바이너리 코드"
@@ -68,7 +68,7 @@ function DataDetail(){
         function dataDel(){
                 if(confirm("글을 삭제하시겠습니까?")){
                         
-                        axios.get(`http://192.168.4.50:9988/data/dataDelete/${id}`)
+                        axios.get(`http://43.202.150.110:9988/data/dataDelete/${id}`)
                         .then((response)=>{
                                 console.log(response.data) 
                                 if(response.data == "Ok"){
@@ -116,7 +116,7 @@ function DataDetail(){
                                         {
                                                 filelist.map((file, i)=>{
                                                         return (
-                                                                <img src={`http://192.168.4.50:9988/uploads/${file}`}
+                                                                <img src={`http://43.202.150.110:9988/uploads/${file}`}
                                                                      style={{width:'100px', height:'100px',margin:'10px',cursor:'pointer'}}
                                                                      onClick={()=> downloadFile(`${file}`)}
                                                                      key={i}   

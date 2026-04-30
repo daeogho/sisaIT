@@ -44,7 +44,7 @@ function BbsForm() {
         }       
 
         // 비동기 호출
-        axios.post("http://192.168.4.50:9988/bbs/bbsWrite", bbsData)
+        axios.post("http://43.202.150.110:9988/bbs/bbsWrite", bbsData)
         .then((response) => {
                 console.log("response.data", response.data);
                 if(response.data.id>0){

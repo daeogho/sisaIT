@@ -36,7 +36,7 @@ function QnaEdit() {
 
         }            
   function getQnaData(){
-        axios.get(`http://192.168.4.50:9988/qna/qnaDetail/${id}`)
+        axios.get(`http://43.202.150.110:9988/qna/qnaDetail/${id}`)
         .then((response)=>{
                console.log("글수정 폼 글 정보가져오기 성공==>",response.data);
                setQnaData({
@@ -80,7 +80,7 @@ function QnaEdit() {
         }       
 
         // 비동기 호출
-        axios.post("http://192.168.4.50:9988/qna/qnaEditOk", qnaData2)
+        axios.post("http://43.202.150.110:9988/qna/qnaEditOk", qnaData2)
         .then((response) => {
                 console.log(response.data);
                 if(response.data){

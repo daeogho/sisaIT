@@ -40,7 +40,7 @@ function JoinsForm() {
                 }
                 //백엔드
                 
-                axios.post('http://192.168.4.50:9988/joins/joinsForm',{
+                axios.post('http://43.202.150.110:9988/joins/joinsForm',{
                         userid:joins.userid,
                         userpwd:joins.userpwd,          
                         username:joins.username,

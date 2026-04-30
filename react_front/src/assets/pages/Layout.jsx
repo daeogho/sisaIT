@@ -9,7 +9,7 @@ function Layout() {
         //sessionStorage정보 삭제
         function logoutFnt(){
 
-                axios.get('http://192.168.4.50:9988/joins/logout')
+                axios.get('http://43.202.150.110:9988/joins/logout')
                 .then((response)=>{
                         // sessionStorage의 모든 변수를 삭제한다.
                         window.sessionStorage.clear();

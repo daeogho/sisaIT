@@ -37,7 +37,7 @@ import axios from 'axios'
                         }
                         // 백엔드
                         // 비동기식 호출 : axios, XMLHttpRequset ajax()
-                        axios.post('http://192.168.4.50:9988/joins/login', formData) 
+                        axios.post('http://43.202.150.110:9988/joins/login', formData) 
                         .then(function (response) {
                                 console.log(response.data)
                                 if(!response.data){

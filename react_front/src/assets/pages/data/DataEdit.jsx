@@ -32,7 +32,7 @@ function DataEdit(){
                         getOriginalData()
         }, [])
         const getOriginalData = ()=>{
-                axios.get(`http://192.168.4.50:9988/data/dataDetail/${id}`)
+                axios.get(`http://43.202.150.110:9988/data/dataDetail/${id}`)
                 .then((response)=>{
                         console.log("파일왔는지확인->", response.data)
                         //제목
@@ -108,7 +108,7 @@ function DataEdit(){
                 }
 
                 //비동기호출
-                axios.post('http://192.168.4.50:9988/data/dataEditOk', formData,{
+                axios.post('http://43.202.150.110:9988/data/dataEditOk', formData,{
                         headers:{
                                 "Content-Type":"multipart/form-data"
                         }
@@ -153,7 +153,7 @@ function DataEdit(){
                                 {       
                                         orgFile.map((f, idx)=>{
                                                 return <div key={idx} style={{float:'left', padding:'10px'}}>
-                                                                <img src = {`http://192.168.4.50:9988/uploads/${f.filename}`}
+                                                                <img src = {`http://43.202.150.110:9988/uploads/${f.filename}`}
                                                                 style={{width:'100px', height:'100px'}}/>
                                                                 <b onClick={(event)=>addDelFile(event, f.id)}
                                                                 style={{cursor:"pointer"}}>X</b>

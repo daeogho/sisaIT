@@ -20,7 +20,7 @@ function BbsDetail(){
                 
         },[]);
         function getBbsDetail(){
-                axios.get(`http://192.168.4.50:9988/bbs/bbsDetail/${id}`)
+                axios.get(`http://43.202.150.110:9988/bbs/bbsDetail/${id}`)
                 .then((response)=>{
                         console.log(response.data);
                         setBbsData({
@@ -40,7 +40,7 @@ function BbsDetail(){
         // 글삭제
         function bbsDelete(){
                 if(confirm("글을 삭제하시겠습니까?")){
-                        axios.delete(`http://192.168.4.50:9988/bbs/bbsDelete/${bbsData.id}`)
+                        axios.delete(`http://43.202.150.110:9988/bbs/bbsDelete/${bbsData.id}`)
                         .then((response)=>{//글삭제시 목록으로 이동하기
                                 console.log(response.data);
                                 if(response.data == 1){

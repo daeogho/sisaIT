@@ -18,7 +18,7 @@ function QnaDetail(){
                 
         },[]);
         function getQnaDetail(){
-                axios.get(`http://192.168.4.50:9988/qna/qnaDetail/${id}`)
+                axios.get(`http://43.202.150.110:9988/qna/qnaDetail/${id}`)
                 .then((response)=>{
                         console.log(response.data);
                         setQnaData({
@@ -38,7 +38,7 @@ function QnaDetail(){
         // 글삭제
         function qnaDelete(){
                 if(confirm("글을 삭제하시겠습니까?")){
-                        axios.delete(`http://192.168.4.50:9988/qna/qnaDelete/${qnaData.id}`)
+                        axios.delete(`http://43.202.150.110:9988/qna/qnaDelete/${qnaData.id}`)
                         .then((response)=>{//글삭제시 목록으로 이동하기
                                 console.log(response.data);
                                 if(response.data == 1){

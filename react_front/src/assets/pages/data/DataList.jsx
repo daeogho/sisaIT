@@ -30,7 +30,7 @@ function DataList() {
                         url +="&searchKey="+searchData.searchKey+"&searchWord="+searchData.searchWord;
                 }
 
-                axios.get(`http://192.168.4.50:9988/data/dataList${url}`)
+                axios.get(`http://43.202.150.110:9988/data/dataList${url}`)
                 .then((response)=>{
                         console.log(response.data);
                         // 페이지 관련정보를 useState로 보관

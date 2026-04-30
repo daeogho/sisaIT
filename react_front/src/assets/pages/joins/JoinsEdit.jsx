@@ -13,7 +13,7 @@ function JoinsEdit() {
         }, [])
         // 회원정보 가져오기
         function getJoins() {
-                axios.post('http://192.168.4.50:9988/joins/getJoins', { userid: window.sessionStorage.getItem("logId") })
+                axios.post('http://43.202.150.110:9988/joins/getJoins', { userid: window.sessionStorage.getItem("logId") })
                         .then((response) => {
                                 console.log(response.data)
                                 setJoins({
@@ -65,7 +65,7 @@ function JoinsEdit() {
                         return false
                 }
                 // 백엔드 ----------------------------------------
-                axios.post('http://192.168.4.50:9988/joins/joinsEdit', joins) // id, userid, userpwd, username, tel, email, writedate
+                axios.post('http://43.202.150.110:9988/joins/joinsEdit', joins) // id, userid, userpwd, username, tel, email, writedate
                         .then(function (response) {
                                 console.log("서버응답", response.data);
                                 if (response.data) { //회원가입성공
@@ -85,7 +85,7 @@ function JoinsEdit() {
                 if(que){ //비번을 입력한 경우
                         // 비밀번호, 아이디를 가지로 서버에 요청하기
                         //             http://192.168.4.22:9988/goguma/12345
-                        axios.delete('http://192.168.4.50:9988/joins/unregister/'+joins.id)
+                        axios.delete('http://43.202.150.110:9988/joins/unregister/'+joins.id)
                         .then((response)=>{
                                 console.log(response.data)
                                 if(response.data==0){// 회원이 탈퇴하면
