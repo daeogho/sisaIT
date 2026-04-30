@@ -2,4 +2,4 @@
 1. HomeLog (인테리어 추천 플랫폼)
 2. 프론트 : react 기술(프레임워크)
 3. 백엔드 : node.js 기술(프레임워크)
-4. 개발환경(IDE) : vsCode(에디터)
+4. 개발환경(IDE) : vsCode
