@@ -18,7 +18,11 @@ function Layout() {
         },[])
 
         function logoutFnc(){
+<<<<<<< HEAD
                 axios.get('http://192.168.4.86:9988/logout')
+=======
+                axios.get('http://192.168.55.198:3000/logout')
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                 .then(function(response){
                         if(response.data.logout=='yes'){
                                 setLogStatus('N')

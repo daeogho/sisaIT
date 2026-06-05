@@ -17,7 +17,11 @@ function MyPage() {
                 getMyComent();
         }, [])
         function getMemberData() {
+<<<<<<< HEAD
                 axios.get('http://192.168.4.86:9988/member/myPage')
+=======
+                axios.get('http://192.168.55.198:3000/member/myPage')
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         .then(function (response) {
                                 console.log("마이페이지 회원정보 ==>", response)
                                 setMember({
@@ -33,10 +37,17 @@ function MyPage() {
         }
 
         function getMyboard() {
+<<<<<<< HEAD
                 axios.get('http://192.168.4.86:9988/member/writeboard')
                         .then((response) => {
                                 const list = response.data.record.map((item) => {
                                         let thumbnail = "http://192.168.4.86:9988/uploads/1769067242086-img.jpg"
+=======
+                axios.get('http://192.168.55.198:3000/member/writeboard')
+                        .then((response) => {
+                                const list = response.data.record.map((item) => {
+                                        let thumbnail = "http://192.168.55.198:3000/uploads/1769067242086-img.jpg"
+>>>>>>> abcfb60 (발표 ppt파일 추가)
 
 
                                         const index = item.context.indexOf('<img src="')
@@ -59,11 +70,19 @@ function MyPage() {
         }
 
         function getMylike() {
+<<<<<<< HEAD
                 axios.get('http://192.168.4.86:9988/member/likelist')
                         .then((response) => {
                                 const list = response.data.record.map((item) => {
                                         let thumbnail =
                                                 "http://192.168.4.86:9988/uploads/1769067242086-img.jpg"
+=======
+                axios.get('http://192.168.55.198:3000/member/likelist')
+                        .then((response) => {
+                                const list = response.data.record.map((item) => {
+                                        let thumbnail =
+                                                "http://192.168.55.198:3000/uploads/1769067242086-img.jpg"
+>>>>>>> abcfb60 (발표 ppt파일 추가)
 
 
                                         const index = item.context?.indexOf('<img src="')
@@ -85,7 +104,11 @@ function MyPage() {
                         .catch(console.log)
         }
         function getMyComent() {
+<<<<<<< HEAD
                 axios.get('http://192.168.4.86:9988/member/mycoment')
+=======
+                axios.get('http://192.168.55.198:3000/member/mycoment')
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         .then(function (response) {
                                 const list = response.data.record.map((coment) => {
 

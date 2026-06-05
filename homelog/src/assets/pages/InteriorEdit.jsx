@@ -19,7 +19,11 @@ function InteriorEdit() {
 
 
         useEffect(() => {
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/interior/editForm', { no })
+=======
+                axios.post('http://192.168.55.198:3000/interior/editForm', { no })
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         .then(res => {
                                 setInteriorData(res.data.record)
                                 editorRef.current?.getInstance().setHTML(res.data.record.context)
@@ -49,7 +53,11 @@ function InteriorEdit() {
                 }
 
 
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/interior/editOk', {
+=======
+                axios.post('http://192.168.55.198:3000/interior/editOk', {
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         no: interiorData.no,
                         subject: interiorData.subject,
                         context: editorHtml
@@ -108,7 +116,11 @@ function InteriorEdit() {
                                                                 const formData = new FormData()
                                                                 formData.append('image', blob)
                                                                 const res = await fetch(
+<<<<<<< HEAD
                                                                         'http://192.168.4.86:9988/upload',
+=======
+                                                                        'http://192.168.55.198:3000/upload',
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                                                                         { method: 'POST', body: formData }
                                                                 )
                                                                 const data = await res.json()

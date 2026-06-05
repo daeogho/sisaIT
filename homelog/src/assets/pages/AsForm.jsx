@@ -102,7 +102,11 @@ function AsForm() {
 
 
                                                                 const res = await fetch(
+<<<<<<< HEAD
                                                                         'http://192.168.4.86:9988/upload',
+=======
+                                                                        'http://192.168.55.198:3000/upload',
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                                                                         { method: 'POST', body: formData }
                                                                 )
                                                                 const data = await res.json()

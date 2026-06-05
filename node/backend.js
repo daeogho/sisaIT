@@ -11,7 +11,11 @@ var session = require('express-session')
 var mysql2 = require('mysql2')
 
 var connection = mysql2.createConnection({
+<<<<<<< HEAD
         host: '192.168.4.51',
+=======
+        host: '192.168.55.198',
+>>>>>>> abcfb60 (발표 ppt파일 추가)
         port: 3306,
         user: 'miniproject1',
         password: 'mini1',
@@ -213,7 +217,11 @@ const upload = multer({
 
 app.post('/upload', upload.single('image'), (req, res) => {
         res.json({
+<<<<<<< HEAD
                 url: `http://192.168.4.86:9988/uploads/${req.file.filename}`,
+=======
+                url: `http://192.168.55.198:3000/uploads/${req.file.filename}`,
+>>>>>>> abcfb60 (발표 ppt파일 추가)
         });
 });
 

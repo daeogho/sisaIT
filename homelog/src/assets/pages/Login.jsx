@@ -70,7 +70,11 @@ function Login(){
 
                 // 백엔드
                 // 비동기식 호출 : axios, XMLHttpRequset, ajax()
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/login',{
+=======
+                axios.post('http://192.168.55.198:3000/login',{
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         userid:formData.userid,
                         userpwd:formData.userpwd
                 })

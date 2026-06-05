@@ -17,7 +17,11 @@ function Interior() {
 
   /* QnA 목록 */
   useEffect(() => {
+<<<<<<< HEAD
     axios.get('http://192.168.4.86:9988/interior/list')
+=======
+    axios.get('http://192.168.55.198:3000/interior/list')
+>>>>>>> abcfb60 (발표 ppt파일 추가)
       .then(res => {
         const list = res.data.record.map(qna => {
           const context = qna.context || ''
@@ -28,7 +32,11 @@ function Interior() {
             const endIdx = context.indexOf('"', imgIdx + 10)
             thumbnail = context.substring(imgIdx + 10, endIdx)
           } else {
+<<<<<<< HEAD
             thumbnail = 'http://192.168.4.86:9988/uploads/1769067242086-img.jpg'
+=======
+            thumbnail = 'http://192.168.55.198:3000/uploads/1769067242086-img.jpg'
+>>>>>>> abcfb60 (발표 ppt파일 추가)
           }
 
           return {
@@ -60,7 +68,11 @@ function Interior() {
 
   const qnaDel = (no) => {
     if (!window.confirm('현재 글을 삭제하시겠습니까?')) return
+<<<<<<< HEAD
     axios.post('http://192.168.4.86:9988/interior/del', { no })
+=======
+    axios.post('http://192.168.55.198:3000/interior/del', { no })
+>>>>>>> abcfb60 (발표 ppt파일 추가)
       .then(res => {
         if (res.data.result === 'ok') {
           setQnaList(prev => prev.filter(item => item.no !== no))

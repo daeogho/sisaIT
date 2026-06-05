@@ -33,7 +33,11 @@ const BoardView = () => {
         }, [])
 
         const getboard = () => {
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/member/boardview', { board_no: board_no })
+=======
+                axios.post('http://192.168.55.198:3000/member/boardview', { board_no: board_no })
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         .then((response) => {
                                 console.log('게시판 서버응답', response.data)
                                 setboardData(response.data.record)
@@ -57,7 +61,11 @@ const BoardView = () => {
         // 글삭제
         const boardDel = () => {
                 if (window.confirm("현재글을 삭제하시겠습니까")) {
+<<<<<<< HEAD
                         axios.post('http://192.168.4.86:9988/board/del', { board_no: boardData.no })
+=======
+                        axios.post('http://192.168.55.198:3000/board/del', { board_no: boardData.no })
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                                 .then((response) => {
                                         if (response.data.result == "ok") {
                                                 alert("삭제 되었습니다.")
@@ -73,7 +81,11 @@ const BoardView = () => {
         }
         // 좋아요
         const likeCheck = () => {
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/member/like', { board_no: boardData.no })
+=======
+                axios.post('http://192.168.55.198:3000/member/like', { board_no: boardData.no })
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         .then((response) => {
                                 console.log(response.data.likecheck)
                                 if (response.data.likecheck == "like") {
@@ -93,7 +105,11 @@ const BoardView = () => {
                         alert('댓글을 입력하세요')
                         return
                 }
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/comment/write', {
+=======
+                axios.post('http://192.168.55.198:3000/comment/write', {
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         board_no: board_no,
                         context: commentText,
                         board: 'homelog_db'
@@ -116,7 +132,11 @@ const BoardView = () => {
         }
         // 댓글 목록
         const getCommentList = () => {
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/comment/list', {
+=======
+                axios.post('http://192.168.55.198:3000/comment/list', {
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         board_no,
                 })
                         .then(res => {
@@ -127,7 +147,11 @@ const BoardView = () => {
         // 댓글 삭제
         const deleteComment = (comentno) => {
                 if (!window.confirm('댓글을 삭제하시겠습니까?')) return
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/comment/delete', {
+=======
+                axios.post('http://192.168.55.198:3000/comment/delete', {
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         comentno,
                         userid
                 })

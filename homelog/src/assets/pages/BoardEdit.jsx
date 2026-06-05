@@ -22,7 +22,11 @@ const BoardEdit = () => {
                 getBoardData()
         }, [])
         const getBoardData = () => {
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/board/editForm', { board_no: board_no })
+=======
+                axios.post('http://192.168.55.198:3000/board/editForm', { board_no: board_no })
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         .then((response) => {
                                 setBoardData(response.data.record)
                         })
@@ -60,7 +64,11 @@ const BoardEdit = () => {
                         tag: boardData.tag
                 };
 
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/board/edit', sendData)
+=======
+                axios.post('http://192.168.55.198:3000/board/edit', sendData)
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         .then((response) => {
                                 console.log(response.data)
 
@@ -140,7 +148,11 @@ const BoardEdit = () => {
 
 
                                                         // 실제 서버 API로 교체
+<<<<<<< HEAD
                                                         const res = await fetch('http://192.168.4.86:9988/upload', { method: 'POST', body: formData })
+=======
+                                                        const res = await fetch('http://192.168.55.198:3000/upload', { method: 'POST', body: formData })
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                                                         const data = await res.json()
 
                                                         // 업로드 완료 후 URL 콜백

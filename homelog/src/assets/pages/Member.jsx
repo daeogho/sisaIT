@@ -73,7 +73,11 @@ function Member() {
                 }
                 // 백엔드 ----------------------------------------
 
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/member', member)
+=======
+                axios.post('http://192.168.55.198:3000/member', member)
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                         .then(function (response) {
                                 console.log(response.data);
                                 if (response.data.result == 'success') {

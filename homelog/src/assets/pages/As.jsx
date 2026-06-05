@@ -18,7 +18,11 @@ function As() {
   }, []);
 
   const getAsList = () => {
+<<<<<<< HEAD
     axios.get('http://192.168.4.86:9988/as/ask')
+=======
+    axios.get('http://192.168.55.198:3000/as/ask')
+>>>>>>> abcfb60 (발표 ppt파일 추가)
       .then((res) => {
         console.log("서버 데이터 응답:", res.data);
         if (res.data && res.data.record) {
@@ -47,7 +51,11 @@ function As() {
   const asDel = (no) => {
     if (window.confirm("현재 글을 삭제하시겠습니까?")) {
       //해당 글을 지우고 목록으로 이동
+<<<<<<< HEAD
       axios.post('http://192.168.4.86:9988/as/del', {
+=======
+      axios.post('http://192.168.55.198:3000/as/del', {
+>>>>>>> abcfb60 (발표 ppt파일 추가)
         no: no
       })
         .then((response) => {

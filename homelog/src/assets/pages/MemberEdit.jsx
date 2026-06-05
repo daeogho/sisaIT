@@ -22,7 +22,11 @@ function MemberEdit(){
                 getMemberData();
         },[])
         function getMemberData(){
+<<<<<<< HEAD
                 axios.get('http://192.168.4.86:9988/memberEdit')
+=======
+                axios.get('http://192.168.55.198:3000/memberEdit')
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                 .then(function(response){
                         console.log("회원정보 수정폼==>",response)
                         setMember({
@@ -54,7 +58,11 @@ function MemberEdit(){
                         return false;
                 }
                 //백엔드 ================================아이디 , 비번 , 이름, 연락처
+<<<<<<< HEAD
                 axios.post('http://192.168.4.86:9988/memberEditOk',member)
+=======
+                axios.post('http://192.168.55.198:3000/memberEditOk',member)
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                 .then(function(response){
                         console.log(response.data);
                         if(response.data.result=='OK'){ // 회원가입 성공

@@ -48,7 +48,11 @@ function AsEdit() {
     }
 
 
+<<<<<<< HEAD
     axios.post('http://192.168.4.86:9988/as/editOk', {
+=======
+    axios.post('http://192.168.55.198:3000/as/editOk', {
+>>>>>>> abcfb60 (발표 ppt파일 추가)
       no,
       subject: asData.subject,
       context: editorHtml

@@ -49,7 +49,11 @@ function AskEdit() {
     }
 
 
+<<<<<<< HEAD
     axios.post('http://192.168.4.86:9988/ask/editOk', {
+=======
+    axios.post('http://192.168.55.198:3000/ask/editOk', {
+>>>>>>> abcfb60 (발표 ppt파일 추가)
       no,
       subject: askData.subject,
       context: editorHtml
@@ -109,7 +113,11 @@ function AskEdit() {
 
 
                 // 실제 서버 API로 교체
+<<<<<<< HEAD
                 const res = await fetch('http://192.168.4.86:9988/upload', { method: 'POST', body: formData })
+=======
+                const res = await fetch('http://192.168.55.198:3000/upload', { method: 'POST', body: formData })
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                 const data = await res.json()
 
                 // 업로드 완료 후 URL 콜백

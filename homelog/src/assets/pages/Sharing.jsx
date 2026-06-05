@@ -25,7 +25,11 @@ function Sharing() {
 
   const getBoardList = () => {
     console.log('searchQuery', searchQuery)
+<<<<<<< HEAD
     axios.get('http://192.168.4.86:9988/member/sharing',
+=======
+    axios.get('http://192.168.55.198:3000/member/sharing',
+>>>>>>> abcfb60 (발표 ppt파일 추가)
       {
         params: {
           tag: searchQuery // 🔥 서버에서 받는 이름에 맞춰야 함         
@@ -47,7 +51,11 @@ function Sharing() {
 
             thumnailImage = board.context.substring(index + 10, indexEnd);
           } else {//이미지가 없다.
+<<<<<<< HEAD
             thumnailImage = "http://192.168.4.86:9988/uploads/1.avif"
+=======
+            thumnailImage = "http://192.168.55.198:3000/uploads/1.avif"
+>>>>>>> abcfb60 (발표 ppt파일 추가)
           };
           // console.log(thumnailImage);
           // console.log(board.likenum)

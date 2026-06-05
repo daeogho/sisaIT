@@ -26,14 +26,22 @@ function Ask() {
 
 
     // const getAskList = () => {
+<<<<<<< HEAD
     //     axios.get('http://192.168.4.86:9988/ask/list')
+=======
+    //     axios.get('http://192.168.55.198:3000/ask/list')
+>>>>>>> abcfb60 (발표 ppt파일 추가)
     //         .then(res => {
     //             if (res.data?.record) setAskList(res.data.record)
     //         })
     //         .catch(err => console.error(err))
     // }
     useEffect(() => {
+<<<<<<< HEAD
         axios.get('http://192.168.4.86:9988/ask/list')
+=======
+        axios.get('http://192.168.55.198:3000/ask/list')
+>>>>>>> abcfb60 (발표 ppt파일 추가)
             .then(res => {
                 const list = res.data.record.map(qna => {
                     const context = qna.context || ''
@@ -44,7 +52,11 @@ function Ask() {
                         const endIdx = context.indexOf('"', imgIdx + 10)
                         thumbnail = context.substring(imgIdx + 10, endIdx)
                     } else {
+<<<<<<< HEAD
                         thumbnail = 'http://192.168.4.86:9988/uploads/1769067242086-img.jpg'
+=======
+                        thumbnail = 'http://192.168.55.198:3000/uploads/1769067242086-img.jpg'
+>>>>>>> abcfb60 (발표 ppt파일 추가)
                     }
 
                     return {
@@ -80,7 +92,11 @@ function Ask() {
 
     const askDel = (no) => {
         if (!window.confirm('현재 글을 삭제하시겠습니까?')) return
+<<<<<<< HEAD
         axios.post('http://192.168.4.86:9988/ask/del', { no })
+=======
+        axios.post('http://192.168.55.198:3000/ask/del', { no })
+>>>>>>> abcfb60 (발표 ppt파일 추가)
             .then(res => {
                 if (res.data.result === 'ok'){
                     alert('삭제 되었습니다.')
